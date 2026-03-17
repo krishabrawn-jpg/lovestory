@@ -1,0 +1,241 @@
+body{
+margin:0;
+font-family:Arial;
+color:white;
+text-align:center;
+overflow:hidden;
+}
+
+/* розмитий фон */
+
+body::before{
+
+content:"";
+
+position:fixed;
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:url("photos/bg.jpg");
+
+background-size:cover;
+background-position:center;
+
+filter:blur(10px) brightness(0.5);
+
+z-index:-1;
+
+}
+
+/* старт */
+
+.start{
+
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+
+}
+
+button{
+
+padding:20px 40px;
+font-size:24px;
+
+border:none;
+
+border-radius:40px;
+
+background:#ff4d6d;
+color:white;
+
+cursor:pointer;
+
+transition:0.3s;
+
+}
+
+button:hover{
+
+transform:scale(1.1);
+
+}
+
+/* основна частина */
+
+.main{
+
+display:none;
+
+padding-top:80px;
+
+animation:fade 3s;
+
+}
+
+@keyframes fade{
+
+from{opacity:0}
+to{opacity:1}
+
+}
+
+.title{
+
+font-size:50px;
+
+}
+
+#timer{
+
+font-size:28px;
+
+margin:30px;
+
+}
+
+/* фото */
+
+.slideshow img{
+
+width:300px;
+
+border-radius:20px;
+
+box-shadow:0 20px 40px rgba(0,0,0,0.6);
+
+}
+
+/* Polaroid */
+
+.polaroid-wall{
+
+position:relative;
+margin-top:100px;
+height:500px;
+
+}
+
+.polaroid-wall img{
+
+position:absolute;
+
+width:180px;
+
+padding:10px 10px 40px 10px;
+
+background:white;
+
+box-shadow:0 10px 30px rgba(0,0,0,0.6);
+
+opacity:0;
+
+animation:drop 2s forwards;
+
+}
+
+.polaroid-wall img:nth-child(1){
+left:20%;
+top:50px;
+transform:rotate(-10deg);
+animation-delay:2s;
+}
+
+.polaroid-wall img:nth-child(2){
+left:40%;
+top:120px;
+transform:rotate(8deg);
+animation-delay:4s;
+}
+
+.polaroid-wall img:nth-child(3){
+left:60%;
+top:80px;
+transform:rotate(-6deg);
+animation-delay:6s;
+}
+
+.polaroid-wall img:nth-child(4){
+left:30%;
+top:200px;
+transform:rotate(5deg);
+animation-delay:8s;
+}
+
+.polaroid-wall img:nth-child(5){
+left:55%;
+top:220px;
+transform:rotate(-4deg);
+animation-delay:10s;
+}
+.polaroid-wall img:nth-child(6){
+left:70%;
+top:150px;
+transform:rotate(6deg);
+animation-delay:12s;
+}
+
+.polaroid-wall img:nth-child(7){
+left:10%;
+top:220px;
+transform:rotate(-8deg);
+animation-delay:14s;
+}
+
+.polaroid-wall img:nth-child(8){
+left:50%;
+top:300px;
+transform:rotate(4deg);
+animation-delay:16s;
+}
+
+.polaroid-wall img:nth-child(9){
+left:75%;
+top:250px;
+transform:rotate(-5deg);
+animation-delay:18s;
+}
+
+.polaroid-wall img:nth-child(10){
+left:35%;
+top:350px;
+transform:rotate(3deg);
+animation-delay:20s;
+}
+
+@keyframes drop{
+
+0%{
+opacity:0;
+transform:translateY(-200px);
+}
+
+100%{
+opacity:1;
+}
+
+}
+
+/* фінал */
+
+.final{
+
+position:relative;
+
+margin-top:250px; /* відступ від фото */
+
+font-size:60px;
+
+opacity:0;
+
+animation:final 4s forwards;
+
+animation-delay:22s; /* після всіх фото */
+
+text-align:center;
+
+}
